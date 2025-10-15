@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            color: #5a3e36;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #d46a6a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #7d5d5b;
+        }
+
+        .hearts {
+            font-size: 2rem;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .letter-section {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+       .envelope {
+    width: 320px;
+    height: 220px;
+    background: #f8f0e9;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin: 0 auto;
+}
+
+.envelope:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f9e3e3 0%, #f5d0d0 100%);
+    border-radius: 8px;
+    z-index: 1;
+    border: 2px solid #e8c4c4;
+}
+
+.envelope:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    background: #f5d0d0;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    border-radius: 8px 8px 0 0;
+    z-index: 2;
+    border-bottom: 2px solid #e8c4c4;
+}
+
+.letter {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background: white;
+    border-radius: 4px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #f0f0f0;
+}
+
+.letter:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    right: 20px;
+    height: 20px;
+    background: #f5d0d0;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    z-index: 4;
+}
+
+
+        .letter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: white;
+            border-radius: 5px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.5s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .letter i {
+            font-size: 2rem;
+            color: #d46a6a;
+            margin-bottom: 10px;
+        }
+
+        .letter p {
+            font-weight: 500;
+            color: #d46a6a;
+        }
+
+        .letter-content {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            animation: fadeInUp 1s ease;
+            margin-top: 30px;
+        }
+
+        .letter-content.show {
+            display: block;
+        }
+
+        .letter-content h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d46a6a;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+        }
+
+        .message {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: #d46a6a;
+            font-weight: 500;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #d46a6a;
+        }
+
+        .funny-image-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .funny-image-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .funny-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .caption {
+            font-style: italic;
+            color: #7d5d5b;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7d5d5b;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy Birthday, My Love!</h1>
+            <div class="hearts">
+                <i class="fas fa-heart" style="animation-delay: 0s;"></i>
+                <i class="fas fa-heart" style="animation-delay: 0.5s;"></i>
+                <i class="fas fa-heart" style="animation-delay: 1s;"></i>
+                <i class="fas fa-heart" style="animation-delay: 1.5s;"></i>
+                <i class="fas fa-heart" style="animation-delay: 2s;"></i>
+            </div>
+            <p class="subtitle">Happy 3rd Anniversary to Us! 💕</p>
+        </header>
+
+       <div class="envelope" id="envelope">
+    <div class="stamp"></div>
+    <div class="letter">
+        <i class="fas fa-heart"></i>
+        <p>A special message for you</p>
+    </div>
+</div>
+
+        <section class="letter-content" id="letterContent">
+            <h2>To My Amazing Boyfriend,</h2>
+            
+            <div class="message">
+                Happy birthday loveyyyyyy 🥳🎂🎊 and happy 3rd anniversary to us!!!!!! 💋.
+            </div>
+            
+            <div class="message">
+                I honestly can't believe it's already been three years. It feels like time just flew by, but at the same time, it's crazy how much we've grown together. We've been through so many things, good days, bad moods, random fights, and all those moments that made us stronger <span class="highlight">(and toxic)</span>.
+            </div>
+            
+            <div class="message">
+                And still, we always find our way back to each other. You've been my safe place, my biggest headache sometimes 🙄, but also my greatest peace <span class="highlight">(not so peace but peace of...charez)</span>.
+            </div>
+            
+            <div class="message">
+                You make life feel lighter just by being in it. Thank you for never giving up on me 🫠, for staying even when it gets hard, and for loving me in ways I never thought I deserved.
+            </div>
+            
+            <div class="message">
+                On your birthday, I just want to remind you how much I appreciate you... your love, your effort, your patience, and everything you do for us. You're growing into such an amazing person, and I'm proud to be beside you through it all ❤️.
+            </div>
+            
+            <div class="message">
+                So here's to more years, more laughter, more late-night talks, and more of us figuring life out together.
+            </div>
+            
+            <div class="message">
+                I love you so much... always have, always will 💗
+            </div>
+            
+            <div class="signature">
+                Your Love 💕
+            </div>
+        </section>
+
+        <!-- FUNNY IMAGE SECTION - ADD YOUR IMAGE HERE -->
+        <section class="funny-image-section">
+            <div class="funny-image-container">
+                <!-- REPLACE THE SRC WITH YOUR FUNNY IMAGE URL -->
+                <img src="img/ambot.jpg" alt="Funny birthday image" class="funny-image">
+      
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart" style="color: #d46a6a;"></i> for the most special person</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const envelope = document.getElementById('envelope');
+            const letterContent = document.getElementById('letterContent');
+            
+            envelope.addEventListener('click', function() {
+                // Hide the envelope
+                envelope.style.display = 'none';
+                
+                // Show the letter content
+                letterContent.classList.add('show');
+                
+                // Create confetti effect
+                createConfetti();
+            });
+            
+            function createConfetti() {
+                const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+                const container = document.body;
+                
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    container.appendChild(confetti);
+                    
+                    // Animation
+                    const animation = confetti.animate([
+                        { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+                        { transform: `translate(${Math.random() * 200 - 100}px, ${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 3000 + 2000,
+                        easing: 'cubic-bezier(0,0,0.2,1)'
+                    });
+                    
+                    animation.onfinish = () => confetti.remove();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
